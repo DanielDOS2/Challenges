@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Encriptador de texto - Daniel Ocampo</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="challengestyle.css">
+    </head>
+
+    <body>
+        <header>
+            <h1><img src="Logo.png" alt="Letra A del Logo de Alura"></h1>
+        </header>
+        <main>
+            <section>
+                <div class="Mensaje">
+                    <textarea cols="35" rows="10" type="text" placeholder="Ingrese el texto aquí" class="Text-input" oninput=cifrar()></textarea>
+                    <p class="aclaracion">&#10687 Solo letras minúsculas y sin acentos</p>
+                    <button class="cifrando" onclick="activar()">Cifrando</button>
+                    <button class="descifrando" onclick="desactivar()">Descifrando</button>
+                </div>
+                <div class="Respuesta">
+                    <textarea cols="50" rows="50" placeholder="Ningún mensaje fue encontrado"  class="Text-output"></textarea>
+                    <button class="copiar" onclick="copiar()">Copiar</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p class="nombre">Creado por Daniel Ocampo Salgado</p>
+        </footer>
+    </body>
+</html>
+
+<script>
+    const inputText = document.querySelector(".Text-input");
+    const outputText = document.querySelector(".Text-output");
+    const btncifrar = document.querySelector(".cifrando");
+    const btndescifrar = document.querySelector(".descifrando");
+    var cifrando = true;
+
+    function activar() {
+        cifrando = true;
+        btncifrar.style.background = "#0A3871";
+        btncifrar.style.color = "#d8dfe8";
+        btndescifrar.style.background = "#d8dfe8";
+        btndescifrar.style.color = "#0A3871";
+        cifrar();
+    }
+
+    function desactivar() {
+        cifrando = false;
+        btndescifrar.style.background = "#0A3871";
+        btndescifrar.style.color = "#d8dfe8";
+        btncifrar.style.background = "#d8dfe8";
+        btncifrar.style.color = "#0A3871";
+        cifrar();
+    }
+
+    function cifrar() {
+        if (cifrando==true) {
+            outputText.style.backgroundImage = "none";
+            outputText.value = cifrarTexto(inputText.value);
+        }
+        else {
+            outputText.style.backgroundImage = "none";
+            outputText.value = descifrarTexto(inputText.value);
+        }
+        
+    }
+
+    function cifrarTexto(text) {
+        let matrizCifrado = [["e","enter"] , ["i","imes"] , ["a","ai"] , ["o","ober"] , ["u","ufat"]];
+        text = text.toLowerCase();
+
+        for (i=0;i<matrizCifrado.length;i++) {
+            if (text.includes(matrizCifrado[i][0])){
+                text=text.replaceAll(matrizCifrado[i][0],matrizCifrado[i][1]);
+            }
+        }
+        return text;
+    }
+
+    function descifrarTexto(text) {
+        let matrizCifrado = [["e","enter"] , ["i","imes"] , ["a","ai"] , ["o","ober"] , ["u","ufat"]];
+        text = text.toLowerCase();
+
+        for ( i = 0 ; i < matrizCifrado.length ; i++ ) {
+            if (text.includes(matrizCifrado[i][1])){
+                text=text.replaceAll(matrizCifrado[i][1],matrizCifrado[i][0]);
+            }
+        }
+        return text;
+    }
+
+    function copiar() {
+        outputText.select();
+        navigator.clipboard.writeText(outputText.value);
+    }
+
+    
+</script>

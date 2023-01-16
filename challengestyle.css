@@ -1,0 +1,139 @@
+
+header {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+section {
+    display: flex;
+    width: 940px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+.Mensaje {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.Text-input{
+    border: none;
+    margin: 8px;
+    background: none;
+    height: 670px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+    outline: none;
+    resize: none;
+}
+
+.aclaracion {
+    width: 205px;
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #495057;
+    opacity: 0.8;
+}
+
+.cifrando {
+    display: inline-block;
+    padding: 24px;
+    margin: 2px;
+    width: 40%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    background-color: #0A3871;
+    color: #d8dfe8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.descifrando {
+    display: inline-block;
+    padding: 24px;
+    margin: 2px;
+    width: 40%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    background-color: #d8dfe8;
+    color: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.Respuesta {
+    background: transparent;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.Text-output {
+    display: flex;
+    padding: 8px;
+    margin: 8px;
+    width: 400px;
+    height: 670px;
+    background-color: #FFFFFF;
+    background-image: url("Muñeco.png");
+    background-repeat: no-repeat;
+    background-position: 18px;
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.639);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+    outline: none;
+    resize: none;
+}
+
+::placeholder {
+    color: #0A3871;
+    opacity: 1;
+}
+
+.copiar {
+    display: inline-block;
+    padding: 24px;
+    width: 40%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    background-color: #d8dfe8;
+    color: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.nombre {
+    text-align: right;
+}
